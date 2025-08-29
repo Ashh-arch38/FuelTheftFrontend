@@ -50,18 +50,8 @@ const MonitoredBusCard: React.FC<MonitoredBusCardProps> = ({
     }
   };
 
-<<<<<<< HEAD
-  const getStatusBadge = () => {
-    switch (status) {
-      case "alert": return "bg-red-500 text-white";
-      case "offline": return "bg-gray-500 text-white";
-      default: return "bg-green-500 text-white";
-    }
-  };
-=======
   const statusBadgeClasses = getStatusBadgeClasses(status);
   const statusDisplayText = getStatusText(status);
->>>>>>> c53db9d
 
   const fuelNum = typeof fuelLevel === "string" ? Number(fuelLevel) : (fuelLevel as number);
   const fuelDisplay = Number.isFinite(fuelNum) ? fuelNum.toFixed(1) : "0.0";
@@ -123,13 +113,8 @@ const MonitoredBusCard: React.FC<MonitoredBusCardProps> = ({
           <div className="text-xs text-blue-600 dark:text-blue-300 font-medium">
             ⛽ Fuel: {fuelDisplay} L
           </div>
-<<<<<<< HEAD
-          <div className={`px-2 py-0.5 text-[10px] rounded-full font-bold uppercase ${getStatusBadge()}`}>
-            {status}
-=======
           <div className={`px-2 py-0.5 text-[10px] rounded-full font-bold uppercase ${statusBadgeClasses}`}>
             {statusDisplayText}
->>>>>>> c53db9d
           </div>
 
         </div>

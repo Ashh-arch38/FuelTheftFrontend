@@ -299,18 +299,7 @@ const FuelChart: React.FC<FuelChartProps> = ({
         <div className="flex items-center gap-2">
           <div
             className="w-3 h-3 rounded-sm"
-<<<<<<< HEAD
-            style={{ backgroundColor: "#6b7280" }}
-          />
-          Sensor Health
-        </div>
-        <div className="flex items-center gap-2">
-          <div
-            className="w-3 h-3 rounded-sm"
-            style={{ backgroundColor: "#f59e0b" }}
-=======
             style={{ backgroundColor: "#3b82f6" }}
->>>>>>> c53db9d
           />
           Normal
         </div>
