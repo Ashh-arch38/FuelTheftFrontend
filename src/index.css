@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: 'signord';
+  src: url('/src/assets/fonts/signord.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;}
+
+/* Optional: smooth transition for dark mode */
+html {
+  transition: background-color 0.3s, color 0.3s;
+}
+
