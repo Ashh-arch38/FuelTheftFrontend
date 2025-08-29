@@ -382,7 +382,6 @@ const Dashboard: React.FC = () => {
 
         // Note: We're now using validFuelData directly instead of the complex merging logic
 
-<<<<<<< HEAD
         // Use the processed fuel data directly
         const finalized = markFuelEvents(validFuelData, { infer: true, treatDropAsTheft: true });
         
@@ -392,10 +391,6 @@ const Dashboard: React.FC = () => {
           acc[eventType] = (acc[eventType] || 0) + 1;
           return acc;
         }, {} as Record<string, number>));
-=======
-        // Apply final processing with markFuelEvents
-        const finalized = markFuelEvents(allDataPoints, { infer: false, treatDropAsTheft: true });
->>>>>>> c53db9d
         
         setFuelData(finalized);
         setEvents(alerts);
@@ -498,7 +493,6 @@ const Dashboard: React.FC = () => {
     []
   );
 
-<<<<<<< HEAD
   // --- Fetch dashboard buses function ---
   const fetchDashboard = useCallback(async () => {
     try {
@@ -541,9 +535,6 @@ const Dashboard: React.FC = () => {
               console.warn(`Failed to fetch sensor status for bus ${bus.id}:`, sensorErr);
               // Fallback to vehicle details method
               sensorStatus = "offline";
-=======
-  // --- Fetch dashboard buses on mount and auto-reload every 15 minutes ---
-  useEffect(() => {
     const fetchDashboard = async () => {
       try {
         setLoading(true);
@@ -607,7 +598,7 @@ const Dashboard: React.FC = () => {
                 status: "offline",
                 lastSeen: null,
               };
->>>>>>> c53db9d
+
             }
 
             // Get vehicle details for fuel level and other info
@@ -661,7 +652,6 @@ const Dashboard: React.FC = () => {
         setSelectedBus(enriched[0].busId);
       }
 
-<<<<<<< HEAD
       setError(null);
     } catch (err) {
       console.error("Dashboard fetch error:", err);
@@ -698,18 +688,6 @@ const Dashboard: React.FC = () => {
 
     return () => clearInterval(interval);
   }, [fetchDashboard]);
-=======
-    // Initial fetch
-    fetchDashboard();
-
-    // Set up auto-reload every 15 minutes (900,000 milliseconds)
-    const intervalId = setInterval(fetchDashboard, 15 * 60 * 1000);
-
-    // Cleanup interval on component unmount
-    return () => clearInterval(intervalId);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
->>>>>>> c53db9d
 
   // --- Build date range (and validate) ---
   const range = useMemo(() => {
@@ -861,11 +839,7 @@ const Dashboard: React.FC = () => {
           title="Ongoing Alerts"
           icon="alert"
           color="from-red-500 to-red-700"
-<<<<<<< HEAD
           apiPath="/history?type=THEFT,DROP,REFUEL"
-=======
-          apiPath="/history?type=THEFT,REFUEL,DROP"
->>>>>>> c53db9d
           timeRange={timeRange}
           customStart={customStart}
           customEnd={customEnd}
