@@ -1,0 +1,58 @@
+{
+  "name": "fuel-theft-frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "engines": {
+    "node": "20.x"
+  },
+  "scripts": {
+    "dev": "vite",
+    "prebuild": "node -e \"const fs=require('fs'); const h=fs.readFileSync('index.html','utf8'); console.log('--- index.html bytes:', h.length); console.log(h.slice(0,200));\"",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.2.4",
+    "@tailwindcss/vite": "^4.1.11",
+    "@types/leaflet": "^1.9.20",
+    "axios": "^1.10.0",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^0.525.0",
+    "react": "^19.1.0",
+    "react-circular-progressbar": "^2.2.0",
+    "react-countup": "^6.5.3",
+    "react-datepicker": "^8.4.0",
+    "react-day-picker": "^9.8.0",
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
+    "react-leaflet": "^5.0.0",
+    "react-router-dom": "^6.30.1",
+    "react-spring": "^10.0.1",
+    "recharts": "^3.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "@tailwindcss/postcss": "^4.1.11",
+    "@types/axios": "^0.9.36",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.35.1",
+    "vite": "^7.0.4"
+  },
+  "overrides": {
+    "rollup": {
+      "@rollup/rollup-linux-x64-gnu": "4.9.5"
+    }
+  }
+}
